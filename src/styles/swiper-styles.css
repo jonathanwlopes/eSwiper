@@ -1,5 +1,5 @@
 :root {
-  --swiper-theme-color: #007aff;
+  --swiper-preloader-color: red;
 }
 
 .swiper {
@@ -144,4 +144,30 @@
   scroll-snap-align: center center;
 }
 
-/*# sourceMappingURL=swiper.css.map */
+.first__container {
+  text-align: center;
+  width: 50%;
+}
+.first__container .wrapper-zoom {
+  width: 50%;
+  margin: 0 auto;
+}
+.first__container img {
+  width: 300px;
+  max-width: 100%;
+}
+
+.first__container--thumbs {
+  text-align: center;
+  width: 50%;
+}
+.first__container--thumbs .wrapper-zoom {
+  width: 50%;
+  margin: 0 auto;
+}
+.first__container--thumbs img {
+  width: 100px;
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=swiper-styles.css.map */

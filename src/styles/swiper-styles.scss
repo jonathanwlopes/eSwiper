@@ -1,7 +1,7 @@
 $themeColor: #007aff !default;
 
 :root {
-  --swiper-theme-color: #{$themeColor};
+  --swiper-preloader-color: red;
 }
 
 .swiper {
@@ -159,5 +159,35 @@ $themeColor: #007aff !default;
 
   > .swiper-wrapper > .swiper-slide {
     scroll-snap-align: center center;
+  }
+}
+
+
+.first__container{
+  text-align: center;
+  width: 50%;
+  
+  .wrapper-zoom{
+    width: 50%;
+    margin: 0 auto;
+  }
+  & img {
+    width: 300px;
+    max-width: 100%;
+  }
+}
+
+
+.first__container--thumbs{
+  text-align: center;
+  width: 50%;
+  
+  .wrapper-zoom{
+    width: 50%;
+    margin: 0 auto;
+  }
+  & img {
+    width: 100px;
+    max-width: 100%;
   }
 }
