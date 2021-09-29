@@ -86,30 +86,6 @@ export const swiperStructure = (swiperContainer, configs) => {
 }
 
 export const eSwiperGenerate = ({ _swiperContainer, configs }) => {
-  const { thumbs } = configs
-  if (thumbs) {
-    const { thumbsConfigs, lazy } = configs
-    const { slidesPerView = 1, spaceBetween = 2, direction, arrows, loop, slideToClickedSlide, centeredSlides } = thumbsConfigs
-
-    const _thumbsContainer = thumbsStructure(configs)
-
-    var swiperThumbs = new Swiper(_thumbsContainer, {
-      direction,
-      loop,
-      arrows,
-      spaceBetween,
-      lazy,
-      slidesPerView,
-      slideToClickedSlide,
-      centeredSlides,
-
-      navigation: {
-        nextEl: arrows ? ".swiper-button-next" : "",
-        prevEl: arrows ? ".swiper-button-prev" : "",
-      },
-    })
-  }
-
   const {
     direction,
     loop,
@@ -125,6 +101,7 @@ export const eSwiperGenerate = ({ _swiperContainer, configs }) => {
     autoplay,
     scrollbar,
     lazy,
+    thumbs,
   } = configs
 
   var swiper = new Swiper(_swiperContainer, {
@@ -138,7 +115,6 @@ export const eSwiperGenerate = ({ _swiperContainer, configs }) => {
     mousewheel,
     autoplay,
     lazy,
-    centeredSlides: true,
 
     pagination: {
       el: pagination ? ".swiper-pagination" : "",
@@ -156,14 +132,36 @@ export const eSwiperGenerate = ({ _swiperContainer, configs }) => {
     scrollbar: {
       el: scrollbar ? ".swiper-scrollbar" : "",
     },
+  })
+
+  if (thumbs) thumbsGenerate(swiper, configs)
+}
+
+export const thumbsGenerate = (swiper, configs) => {
+  const { thumbsConfigs, lazy } = configs
+  const { slidesPerView = 1, spaceBetween = 2, direction, arrows, loop } = thumbsConfigs
+
+  const _thumbsContainer = thumbsStructure(configs)
+
+  var swiperThumbs = new Swiper(_thumbsContainer, {
+    direction,
+    loop,
+    arrows,
+    spaceBetween,
+    lazy,
+    slidesPerView,
+    slideToClickedSlide: true,
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
 
     thumbs: {
-      swiper: swiperThumbs,
+      swiper: swiper,
     },
   })
 }
-
-export const thumbsGenerate = (swiper, configs) => {}
 
 export const thumbsStructure = (configs) => {
   const { thumbsConfigs, lazy } = configs
