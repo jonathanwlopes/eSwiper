@@ -105,7 +105,7 @@ centeredSlides: boolean
 slidesPerView: number | 'auto' | undefined
 rows: number
 mousewheel: boolean
-autoplay: boolean | AutoPlayProps
+autoplay: boolean | { delay: number }
 lazy: boolean
 spaceBetween: number
 isZoom: boolean
@@ -124,9 +124,7 @@ isZoom: boolean
 					}
 ```
 
-
-
-**##  :cherry_blossom: Estilizando o componente **
+##  :cherry_blossom: Estilizando o componente
 
 1. O arquivo swiper-styles.scss está disponível, mas não recomendo altera-lo.
 

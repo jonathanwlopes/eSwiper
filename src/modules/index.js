@@ -13,6 +13,9 @@ const Home = {
         direction: "horizontal",
         isZoom: true,
         thumbs: true,
+        autoplay: {
+          delay: 1000,
+        },
         thumbsConfigs: {
           thumbsContainer: "first__container--thumbs",
           direction: "horizontal",
