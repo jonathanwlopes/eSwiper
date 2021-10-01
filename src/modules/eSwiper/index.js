@@ -163,8 +163,6 @@ export const eSwiperGenerate = ({ _swiperContainer, configs }) => {
   })
 }
 
-export const thumbsGenerate = (swiper, configs) => {}
-
 export const thumbsStructure = (configs) => {
   const { thumbsConfigs, lazy } = configs
   const { thumbsContainer, arrows } = thumbsConfigs
